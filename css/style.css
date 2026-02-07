@@ -172,6 +172,22 @@ nav .container {
   transform: translateY(-1px);
 }
 
+.nav-links .linkedin-link {
+  background: #0A66C2;
+  color: white;
+  padding: 0.4rem 0.85rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  transition: all var(--transition);
+}
+
+.nav-links .linkedin-link:hover {
+  background: #004182;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+}
+
 /* Mobile nav toggle */
 .nav-toggle {
   display: none;
