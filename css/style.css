@@ -549,43 +549,57 @@ nav .container {
   margin-bottom: 0.5rem;
 }
 
-/* Floating shapes - motion graphics containers */
-.motion-shape {
+/* Cycling photo shapes */
+.photo-cycle {
   position: absolute;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: morph 15s ease-in-out infinite;
   overflow: hidden;
+  animation: morph 15s ease-in-out infinite;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
-.motion-shape img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.motion-shape-1 {
-  width: 300px;
-  height: 300px;
-  top: 15%;
+.photo-cycle-1 {
+  width: 320px;
+  height: 320px;
+  top: 12%;
   right: 5%;
   animation-delay: 0s;
 }
 
-.motion-shape-2 {
-  width: 200px;
-  height: 200px;
-  bottom: 20%;
-  right: 15%;
+.photo-cycle-2 {
+  width: 220px;
+  height: 220px;
+  bottom: 18%;
+  right: 12%;
   animation-delay: -5s;
 }
 
-.motion-shape-3 {
-  width: 150px;
-  height: 150px;
-  top: 60%;
-  right: 25%;
+.photo-cycle-3 {
+  width: 160px;
+  height: 160px;
+  top: 55%;
+  right: 28%;
   animation-delay: -10s;
+}
+
+.photo-stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cycle-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.cycle-img.active {
+  opacity: 1;
 }
 
 @keyframes morph {
@@ -690,7 +704,7 @@ footer p {
     gap: 0.75rem;
   }
 
-  .motion-shape {
+  .photo-cycle {
     display: none;
   }
 }

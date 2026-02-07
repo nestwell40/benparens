@@ -41,15 +41,15 @@
       </div>
     </div>
 
-    <!-- Motion graphic shapes - add your images here -->
-    <div class="motion-shape motion-shape-1">
-      <img src="images/motion-1.jpg" alt="" onerror="this.parentElement.style.background='var(--accent-light)'">
+    <!-- Cycling photo shapes -->
+    <div class="photo-cycle photo-cycle-1">
+      <div class="photo-stack"></div>
     </div>
-    <div class="motion-shape motion-shape-2">
-      <img src="images/motion-2.jpg" alt="" onerror="this.parentElement.style.background='var(--accent-light)'">
+    <div class="photo-cycle photo-cycle-2">
+      <div class="photo-stack"></div>
     </div>
-    <div class="motion-shape motion-shape-3">
-      <img src="images/motion-3.jpg" alt="" onerror="this.parentElement.style.background='var(--accent-light)'">
+    <div class="photo-cycle photo-cycle-3">
+      <div class="photo-stack"></div>
     </div>
   </main>
 
@@ -65,16 +65,59 @@
     const navLinks = document.querySelector('.nav-links');
     navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-    // Fade in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+    // Photo cycling animation
+    const photos = [
+      'images/IMG_2034.jpeg',
+      'images/IMG_0746.jpeg',
+      'images/DSC06822.jpeg',
+      'images/IMG_1370.jpeg',
+      'images/IMG_5436.jpeg',
+      'images/IMG_6950.jpeg',
+      'images/IMG_7453.jpeg',
+      'images/IMG_4214.jpeg',
+      'images/IMG_2983.jpeg',
+      'images/IMG_0182.jpeg',
+      'images/IMG_0070.jpeg'
+    ];
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    const stacks = document.querySelectorAll('.photo-stack');
+
+    // Initialize each stack with different starting photos
+    stacks.forEach((stack, stackIndex) => {
+      // Create two image layers for crossfade
+      const img1 = document.createElement('img');
+      const img2 = document.createElement('img');
+      img1.className = 'cycle-img active';
+      img2.className = 'cycle-img';
+
+      // Start each stack at different photo
+      const startIndex = (stackIndex * 4) % photos.length;
+      img1.src = photos[startIndex];
+      img2.src = photos[(startIndex + 1) % photos.length];
+
+      stack.appendChild(img1);
+      stack.appendChild(img2);
+
+      // Cycle photos with staggered timing
+      let currentIndex = startIndex;
+      let showingFirst = true;
+
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % photos.length;
+        const nextIndex = (currentIndex + 1) % photos.length;
+
+        if (showingFirst) {
+          img2.src = photos[currentIndex];
+          img1.classList.remove('active');
+          img2.classList.add('active');
+        } else {
+          img1.src = photos[currentIndex];
+          img2.classList.remove('active');
+          img1.classList.add('active');
+        }
+        showingFirst = !showingFirst;
+      }, 4000 + (stackIndex * 1500)); // Stagger the timing
+    });
   </script>
 </body>
 </html>
