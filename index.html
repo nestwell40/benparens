@@ -7,91 +7,109 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow: hidden;
+    }
+
+    .splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('images/IMG_4214.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .splash::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+    }
+
+    .splash-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+
+    .splash-content h1 {
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 2rem;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      animation: fadeUp 1s ease 0.3s forwards;
+    }
+
+    .enter-btn {
+      display: inline-block;
+      padding: 1rem 3rem;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-radius: 100px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.6s forwards;
+    }
+
+    .enter-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Animated background gradients -->
-  <div class="gradient-bg"></div>
-  <div class="gradient-bg-2"></div>
-
-  <nav>
-    <div class="container">
-      <a href="index.html" class="nav-logo">Ben Parens</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="writing.html">Writing</a></li>
-        <li><a href="outside.html">Outside</a></li>
-        <li><a href="https://www.linkedin.com/in/ben-parens-411419107/" target="_blank" class="linkedin-link">LinkedIn</a></li>
-      </ul>
+  <div class="splash">
+    <div class="splash-content">
+      <h1>Ben Parens</h1>
+      <a href="home.html" class="enter-btn">Enter</a>
     </div>
-  </nav>
-
-  <main class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Ben <span class="accent">Parens</span></h1>
-        <p class="subtitle">
-          Welcome. I write about ideas that matter to me and document life outside.
-        </p>
-        <!-- Newsletter signup -->
-        <div class="newsletter-form">
-          <iframe src="https://benparens.substack.com/embed" width="100%" height="150" style="border:none; background:transparent;" frameborder="0" scrolling="no"></iframe>
-        </div>
-      </div>
-    </div>
-
-    <!-- Photo slideshow -->
-    <div class="photo-slideshow" id="slideshow"></div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Ben Parens</p>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-
-    // Photo slideshow
-    const photos = [
-      'images/IMG_2034.jpeg',
-      'images/IMG_0746.jpeg',
-      'images/DSC06822.jpeg',
-      'images/IMG_1370.jpeg',
-      'images/IMG_5436.jpeg',
-      'images/IMG_6950.jpeg',
-      'images/IMG_7453.jpeg',
-      'images/IMG_4214.jpeg',
-      'images/IMG_2983.jpeg',
-      'images/IMG_0182.jpeg',
-      'images/IMG_0070.jpeg'
-    ];
-
-    const slideshow = document.getElementById('slideshow');
-    let currentIndex = 0;
-
-    // Create image elements
-    photos.forEach((src, i) => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = 'Travel photo';
-      if (i === 0) img.classList.add('active');
-      slideshow.appendChild(img);
-    });
-
-    const images = slideshow.querySelectorAll('img');
-
-    // Cycle through photos
-    setInterval(() => {
-      images[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % photos.length;
-      images[currentIndex].classList.add('active');
-    }, 4000);
-  </script>
+  </div>
 </body>
 </html>
