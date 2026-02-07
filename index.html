@@ -6,17 +6,20 @@
   <title>Ben Parens</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Animated background gradients -->
+  <div class="gradient-bg"></div>
+  <div class="gradient-bg-2"></div>
+
   <nav>
     <div class="container">
       <a href="index.html" class="nav-logo">Ben Parens</a>
       <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="worldviews.html">Worldviews</a></li>
         <li><a href="writing.html">Writing</a></li>
         <li><a href="outside.html">Outside</a></li>
       </ul>
@@ -26,15 +29,26 @@
   <main class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>Ben Parens</h1>
+        <h1>Ben <span class="accent">Parens</span></h1>
         <p class="subtitle">
-          Welcome. I write about ideas that matter to me, share my worldviews,
-          and document life outside.
+          Welcome. I write about ideas that matter to me and document life outside.
         </p>
-        <p>
-          <a href="about.html">Learn more about me &rarr;</a>
-        </p>
+        <!-- Newsletter signup -->
+        <div class="newsletter-form">
+          <iframe src="https://benparens.substack.com/embed" width="100%" height="150" style="border:none; background:transparent;" frameborder="0" scrolling="no"></iframe>
+        </div>
       </div>
+    </div>
+
+    <!-- Motion graphic shapes - add your images here -->
+    <div class="motion-shape motion-shape-1">
+      <img src="images/motion-1.jpg" alt="" onerror="this.parentElement.style.background='var(--accent-light)'">
+    </div>
+    <div class="motion-shape motion-shape-2">
+      <img src="images/motion-2.jpg" alt="" onerror="this.parentElement.style.background='var(--accent-light)'">
+    </div>
+    <div class="motion-shape motion-shape-3">
+      <img src="images/motion-3.jpg" alt="" onerror="this.parentElement.style.background='var(--accent-light)'">
     </div>
   </main>
 
@@ -48,10 +62,18 @@
     // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

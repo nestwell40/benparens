@@ -6,17 +6,19 @@
   <title>Outside - Ben Parens</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="gradient-bg"></div>
+  <div class="gradient-bg-2"></div>
+
   <nav>
     <div class="container">
       <a href="index.html" class="nav-logo">Ben Parens</a>
       <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="worldviews.html">Worldviews</a></li>
         <li><a href="writing.html">Writing</a></li>
         <li><a href="outside.html" class="active">Outside</a></li>
       </ul>
@@ -25,12 +27,14 @@
 
   <main class="page">
     <div class="container">
-      <h1>Outside</h1>
-      <p style="max-width: 650px; margin-bottom: 3rem;">
-        Moments from travels and time spent in the world beyond screens.
-      </p>
+      <div class="fade-in">
+        <h1>Outside</h1>
+        <p style="max-width: 650px; margin-bottom: 3rem;">
+          Moments from travels and time spent in the world beyond screens.
+        </p>
+      </div>
 
-      <div class="gallery-grid">
+      <div class="gallery-grid stagger-in">
         <!-- Add your photos here. Example format: -->
         <!--
         <div class="gallery-item" data-src="images/photo1.jpg">
@@ -40,14 +44,14 @@
         -->
 
         <!-- Placeholder items - replace with your actual photos -->
-        <div class="gallery-item placeholder" style="background: var(--bg-card); display: flex; align-items: center; justify-content: center;">
-          <span style="color: var(--text-secondary); font-size: 0.9rem;">Add photos to images/</span>
+        <div class="gallery-item placeholder" style="background: var(--accent-light); display: flex; align-items: center; justify-content: center;">
+          <span style="color: var(--accent); font-size: 0.9rem; font-weight: 600;">Add photos to images/</span>
         </div>
-        <div class="gallery-item placeholder" style="background: var(--bg-card); display: flex; align-items: center; justify-content: center;">
-          <span style="color: var(--text-secondary); font-size: 0.9rem;">Add photos to images/</span>
+        <div class="gallery-item placeholder" style="background: var(--accent-light); display: flex; align-items: center; justify-content: center;">
+          <span style="color: var(--accent); font-size: 0.9rem; font-weight: 600;">Add photos to images/</span>
         </div>
-        <div class="gallery-item placeholder" style="background: var(--bg-card); display: flex; align-items: center; justify-content: center;">
-          <span style="color: var(--text-secondary); font-size: 0.9rem;">Add photos to images/</span>
+        <div class="gallery-item placeholder" style="background: var(--accent-light); display: flex; align-items: center; justify-content: center;">
+          <span style="color: var(--accent); font-size: 0.9rem; font-weight: 600;">Add photos to images/</span>
         </div>
       </div>
     </div>
@@ -69,6 +73,10 @@
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    }, 100);
   </script>
   <script src="js/gallery.js"></script>
 </body>
