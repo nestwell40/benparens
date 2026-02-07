@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Ben Parens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="nav-logo">Ben Parens</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="worldviews.html">Worldviews</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="outside.html">Outside</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <div class="prose">
+        <h1>About</h1>
+
+        <p>
+          <!-- Add your bio here -->
+          Hello, I'm Ben. This is where you can share your story, background,
+          and what drives you.
+        </p>
+
+        <h2>What I Do</h2>
+        <p>
+          <!-- Describe your work, interests, projects -->
+          Share what you're working on, your professional background,
+          or the things that occupy your time.
+        </p>
+
+        <h2>Background</h2>
+        <p>
+          <!-- Your journey, education, experiences -->
+          Tell the story of how you got here. The path that shaped
+          your perspectives and interests.
+        </p>
+
+        <h2>Get in Touch</h2>
+        <p>
+          <!-- Contact info, links -->
+          The best way to reach me is via email or through my
+          <a href="https://benparens.substack.com" target="_blank">Substack</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Ben Parens</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+</body>
+</html>
