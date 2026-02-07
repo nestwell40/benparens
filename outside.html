@@ -7,71 +7,104 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav>
-    <div class="container">
-      <a href="home.html" class="nav-logo">Ben Parens</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="writing.html">Thoughts</a></li>
-        <li><a href="outside.html" class="active">Outside</a></li>
-        <li><a href="https://www.linkedin.com/in/ben-parens-411419107/" target="_blank" class="linkedin-link">LinkedIn</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="site-wrapper">
+    <!-- Left Sidebar -->
+    <aside class="sidebar-left">
+      <a href="home.html" class="logo">Ben Parens</a>
 
-  <main class="page">
-    <div class="container">
-      <div class="prose" style="margin-bottom: 3rem;">
-        <h1>Outside</h1>
-        <p>
+      <div class="sidebar-left-bottom">
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/ben-parens-411419107/" target="_blank">LinkedIn</a>
+          <a href="https://benparens.substack.com" target="_blank">Substack</a>
+        </div>
+
+        <nav class="page-links">
+          <a href="about.html">About</a>
+          <a href="writing.html">Thoughts</a>
+          <a href="outside.html" class="active">Outside</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="gallery-content">
+        <h1 class="headline">Outside.</h1>
+
+        <p class="subheadline" style="margin-bottom: 3rem;">
           Snapshots from adventures and time spent exploring the world.
         </p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="images/IMG_2034.jpeg">
+            <img src="images/IMG_2034.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/IMG_0746.jpeg">
+            <img src="images/IMG_0746.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/DSC06822.jpeg">
+            <img src="images/DSC06822.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/IMG_1370.jpeg">
+            <img src="images/IMG_1370.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/IMG_5436.jpeg">
+            <img src="images/IMG_5436.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/IMG_6950.jpeg">
+            <img src="images/IMG_6950.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/IMG_7453.jpeg">
+            <img src="images/IMG_7453.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/IMG_4214.jpeg">
+            <img src="images/IMG_4214.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/IMG_2983.jpeg">
+            <img src="images/IMG_2983.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/IMG_0182.jpeg">
+            <img src="images/IMG_0182.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/IMG_0070.jpeg">
+            <img src="images/IMG_0070.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/IMG_3759.jpeg">
+            <img src="images/IMG_3759.jpeg" alt="Adventure">
+          </div>
+          <div class="gallery-item" data-src="images/classicu 2021-11-07 091142.275.jpeg">
+            <img src="images/classicu 2021-11-07 091142.275.jpeg" alt="Adventure">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="sidebar-right">
+      <nav class="top-nav">
+        <a href="home.html">Home</a>
+        <a href="about.html">Info</a>
+        <a href="writing.html">Thoughts</a>
+        <a href="outside.html" class="active">Outside</a>
+      </nav>
+
+      <div>
+        <p class="status-badge">Building Nestwell</p>
+
+        <div class="profile-section">
+          <img src="images/IMG_0746.jpeg" alt="Ben Parens">
+          <div class="profile-info">
+            Builder<br>
+            Based in USA
+          </div>
+        </div>
       </div>
 
-      <div class="gallery-grid">
-        <div class="gallery-item" data-src="images/IMG_2034.jpeg">
-          <img src="images/IMG_2034.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/IMG_0746.jpeg">
-          <img src="images/IMG_0746.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/DSC06822.jpeg">
-          <img src="images/DSC06822.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/IMG_1370.jpeg">
-          <img src="images/IMG_1370.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/IMG_5436.jpeg">
-          <img src="images/IMG_5436.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/IMG_6950.jpeg">
-          <img src="images/IMG_6950.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/IMG_7453.jpeg">
-          <img src="images/IMG_7453.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/IMG_4214.jpeg">
-          <img src="images/IMG_4214.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/IMG_2983.jpeg">
-          <img src="images/IMG_2983.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/IMG_0182.jpeg">
-          <img src="images/IMG_0182.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/IMG_0070.jpeg">
-          <img src="images/IMG_0070.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/IMG_3759.jpeg">
-          <img src="images/IMG_3759.jpeg" alt="Adventure">
-        </div>
-        <div class="gallery-item" data-src="images/classicu 2021-11-07 091142.275.jpeg">
-          <img src="images/classicu 2021-11-07 091142.275.jpeg" alt="Adventure">
-        </div>
+      <div class="sidebar-right-bottom">
+        <a href="https://benparens.substack.com" target="_blank">benparens.substack.com</a>
       </div>
-    </div>
-  </main>
+    </aside>
+  </div>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
@@ -79,17 +112,22 @@
     <img src="" alt="">
   </div>
 
-  <footer>
-    <div class="container">
-      <div class="retro-stripe"></div>
-      <p>&copy; 2024 Ben Parens</p>
-    </div>
-  </footer>
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('active')">&times;</button>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="writing.html">Thoughts</a>
+    <a href="outside.html">Outside</a>
+  </div>
 
   <script>
     const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        document.getElementById('mobileNav').classList.add('active');
+      });
+    }
   </script>
   <script src="js/gallery.js"></script>
 </body>

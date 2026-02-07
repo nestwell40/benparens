@@ -7,54 +7,99 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav>
-    <div class="container">
-      <a href="home.html" class="nav-logo">Ben Parens</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="writing.html">Thoughts</a></li>
-        <li><a href="outside.html">Outside</a></li>
-        <li><a href="https://www.linkedin.com/in/ben-parens-411419107/" target="_blank" class="linkedin-link">LinkedIn</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="site-wrapper">
+    <!-- Left Sidebar -->
+    <aside class="sidebar-left">
+      <a href="home.html" class="logo">Ben Parens</a>
 
-  <main class="page">
-    <div class="container">
-      <div class="prose">
-        <h1>About</h1>
+      <div class="sidebar-left-bottom">
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/ben-parens-411419107/" target="_blank">LinkedIn</a>
+          <a href="https://benparens.substack.com" target="_blank">Substack</a>
+        </div>
 
-        <p>
-          I grew up in a family where good inputs meant good outputs. We weren't big on screens—most of our time was spent outside because that's what made us feel best.
-        </p>
-
-        <p>
-          That foundation led me to sports and training, then college athletics, then marathons. Somewhere along the way, I developed a reverence for what's possible when you simply <span class="highlight">feel good</span>.
-        </p>
-
-        <p>
-          It's why I'm building <strong>Nestwell</strong>: a way to ensure the place we spend most of our time—our homes—doesn't quietly make us worse off.
-        </p>
-
-        <p>
-          I'm documenting as much of this as I can through my writing and seeing as much of the world as possible. To me, a good life is measured by <span class="highlight">experience</span>. Discomfort is a great signal—it means you're in uncharted territory. I try to manufacture as much of that as possible.
-        </p>
+        <nav class="page-links">
+          <a href="about.html" class="active">About</a>
+          <a href="writing.html">Thoughts</a>
+          <a href="outside.html">Outside</a>
+        </nav>
       </div>
-    </div>
-  </main>
+    </aside>
 
-  <footer>
-    <div class="container">
-      <div class="retro-stripe"></div>
-      <p>© 2024 Ben Parens</p>
-    </div>
-  </footer>
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="about-content">
+        <h1 class="headline about-headline">About Me.</h1>
+
+        <div class="about-body">
+          <div class="about-text">
+            <p>
+              <strong>I'm Ben</strong> — a builder focused on creating things that help people feel better, with a background in athletics and a reverence for what's possible when you simply feel good.
+            </p>
+
+            <p>
+              I grew up in a family where good inputs meant good outputs. We weren't big on screens—most of our time was spent outside because that's what made us feel best.
+            </p>
+
+            <p>
+              That foundation led me to sports and training, then college athletics, then marathons. Somewhere along the way, I developed a reverence for what's possible when you simply <strong>feel good</strong>.
+            </p>
+
+            <p>
+              It's why I'm building <strong>Nestwell</strong>: a way to ensure the place we spend most of our time—our homes—doesn't quietly make us worse off.
+            </p>
+
+            <p>
+              I'm documenting as much of this as I can through my writing and seeing as much of the world as possible. To me, a good life is measured by <strong>experience</strong>. Discomfort is a great signal—it means you're in uncharted territory. I try to manufacture as much of that as possible.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="sidebar-right">
+      <nav class="top-nav">
+        <a href="home.html">Home</a>
+        <a href="about.html" class="active">Info</a>
+        <a href="writing.html">Thoughts</a>
+        <a href="outside.html">Outside</a>
+      </nav>
+
+      <div>
+        <p class="status-badge">Building Nestwell</p>
+
+        <div class="profile-section">
+          <img src="images/IMG_0746.jpeg" alt="Ben Parens">
+          <div class="profile-info">
+            Builder<br>
+            Based in USA
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-right-bottom">
+        <a href="https://benparens.substack.com" target="_blank">benparens.substack.com</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('active')">&times;</button>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="writing.html">Thoughts</a>
+    <a href="outside.html">Outside</a>
+  </div>
 
   <script>
     const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        document.getElementById('mobileNav').classList.add('active');
+      });
+    }
   </script>
 </body>
 </html>
