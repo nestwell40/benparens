@@ -41,16 +41,8 @@
       </div>
     </div>
 
-    <!-- Cycling photo shapes -->
-    <div class="photo-cycle photo-cycle-1">
-      <div class="photo-stack"></div>
-    </div>
-    <div class="photo-cycle photo-cycle-2">
-      <div class="photo-stack"></div>
-    </div>
-    <div class="photo-cycle photo-cycle-3">
-      <div class="photo-stack"></div>
-    </div>
+    <!-- Photo slideshow -->
+    <div class="photo-slideshow" id="slideshow"></div>
   </main>
 
   <footer>
@@ -65,7 +57,7 @@
     const navLinks = document.querySelector('.nav-links');
     navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-    // Photo cycling animation
+    // Photo slideshow
     const photos = [
       'images/IMG_2034.jpeg',
       'images/IMG_0746.jpeg',
@@ -80,44 +72,26 @@
       'images/IMG_0070.jpeg'
     ];
 
-    const stacks = document.querySelectorAll('.photo-stack');
+    const slideshow = document.getElementById('slideshow');
+    let currentIndex = 0;
 
-    // Initialize each stack with different starting photos
-    stacks.forEach((stack, stackIndex) => {
-      // Create two image layers for crossfade
-      const img1 = document.createElement('img');
-      const img2 = document.createElement('img');
-      img1.className = 'cycle-img active';
-      img2.className = 'cycle-img';
-
-      // Start each stack at different photo
-      const startIndex = (stackIndex * 4) % photos.length;
-      img1.src = photos[startIndex];
-      img2.src = photos[(startIndex + 1) % photos.length];
-
-      stack.appendChild(img1);
-      stack.appendChild(img2);
-
-      // Cycle photos with staggered timing
-      let currentIndex = startIndex;
-      let showingFirst = true;
-
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % photos.length;
-        const nextIndex = (currentIndex + 1) % photos.length;
-
-        if (showingFirst) {
-          img2.src = photos[currentIndex];
-          img1.classList.remove('active');
-          img2.classList.add('active');
-        } else {
-          img1.src = photos[currentIndex];
-          img2.classList.remove('active');
-          img1.classList.add('active');
-        }
-        showingFirst = !showingFirst;
-      }, 4000 + (stackIndex * 1500)); // Stagger the timing
+    // Create image elements
+    photos.forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Travel photo';
+      if (i === 0) img.classList.add('active');
+      slideshow.appendChild(img);
     });
+
+    const images = slideshow.querySelectorAll('img');
+
+    // Cycle through photos
+    setInterval(() => {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % photos.length;
+      images[currentIndex].classList.add('active');
+    }, 4000);
   </script>
 </body>
 </html>
