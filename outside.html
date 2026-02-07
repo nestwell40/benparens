@@ -4,15 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Outside - Ben Parens</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="gradient-bg"></div>
-  <div class="gradient-bg-2"></div>
-
   <nav>
     <div class="container">
       <a href="home.html" class="nav-logo">Ben Parens</a>
@@ -28,52 +22,63 @@
 
   <main class="page">
     <div class="container">
-      <div class="fade-in">
-        <h1>Outside</h1>
-        <p style="max-width: 650px; margin-bottom: 3rem;">
-          Moments from travels and time spent in the world beyond screens.
-        </p>
-      </div>
+      <h1>Outside 🏔️</h1>
+      <p style="max-width: 650px; margin-bottom: 3rem;">
+        Snapshots from adventures and time spent exploring the world.
+      </p>
 
-      <div class="gallery-grid stagger-in">
+      <div class="gallery-grid">
         <div class="gallery-item" data-src="images/IMG_2034.jpeg">
-          <img src="images/IMG_2034.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_2034.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/IMG_0746.jpeg">
-          <img src="images/IMG_0746.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_0746.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/DSC06822.jpeg">
-          <img src="images/DSC06822.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/DSC06822.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/IMG_1370.jpeg">
-          <img src="images/IMG_1370.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_1370.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/IMG_5436.jpeg">
-          <img src="images/IMG_5436.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_5436.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/IMG_6950.jpeg">
-          <img src="images/IMG_6950.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_6950.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/IMG_7453.jpeg">
-          <img src="images/IMG_7453.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_7453.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/IMG_4214.jpeg">
-          <img src="images/IMG_4214.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_4214.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/IMG_2983.jpeg">
-          <img src="images/IMG_2983.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_2983.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/IMG_0182.jpeg">
-          <img src="images/IMG_0182.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_0182.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/IMG_0070.jpeg">
-          <img src="images/IMG_0070.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_0070.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/IMG_3759.jpeg">
-          <img src="images/IMG_3759.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/IMG_3759.jpeg" alt="Adventure">
         </div>
         <div class="gallery-item" data-src="images/classicu 2021-11-07 091142.275.jpeg">
-          <img src="images/classicu 2021-11-07 091142.275.jpeg" alt="Landscape">
+          <div class="tape"></div>
+          <img src="images/classicu 2021-11-07 091142.275.jpeg" alt="Adventure">
         </div>
       </div>
     </div>
@@ -81,13 +86,13 @@
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-close" aria-label="Close">×</button>
     <img src="" alt="">
   </div>
 
   <footer>
     <div class="container">
-      <p>&copy; 2024 Ben Parens</p>
+      <p>made with ♥ and lots of coffee</p>
     </div>
   </footer>
 
@@ -95,10 +100,6 @@
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-
-    setTimeout(() => {
-      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
-    }, 100);
   </script>
   <script src="js/gallery.js"></script>
 </body>

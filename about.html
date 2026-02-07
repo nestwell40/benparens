@@ -4,15 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Ben Parens</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="gradient-bg"></div>
-  <div class="gradient-bg-2"></div>
-
   <nav>
     <div class="container">
       <a href="home.html" class="nav-logo">Ben Parens</a>
@@ -28,23 +22,23 @@
 
   <main class="page">
     <div class="container">
-      <div class="prose fade-in">
-        <h1>About</h1>
+      <div class="prose">
+        <h1>About me ✍️</h1>
 
         <p>
           I grew up in a family where good inputs meant good outputs. We weren't big on screens—most of our time was spent outside because that's what made us feel best.
         </p>
 
         <p>
-          That foundation led me to sports and training, then college athletics, then marathons. Somewhere along the way, I developed a reverence for what's possible when you simply feel good.
+          That foundation led me to sports and training, then college athletics, then marathons. Somewhere along the way, I developed a reverence for what's possible when you simply <span class="highlight">feel good</span>.
         </p>
 
         <p>
-          It's why I'm building Nestwell: a way to ensure the place we spend most of our time—our homes—doesn't quietly make us worse off.
+          It's why I'm building <strong>Nestwell</strong>: a way to ensure the place we spend most of our time—our homes—doesn't quietly make us worse off.
         </p>
 
         <p>
-          I'm documenting as much of this as I can through my writing and seeing as much of the world as possible. To me, a good life is measured by experience. Discomfort is a great signal—it means you're in uncharted territory. I try to manufacture as much of that as possible.
+          I'm documenting as much of this as I can through my writing and seeing as much of the world as possible. To me, a good life is measured by <span class="highlight">experience</span>. Discomfort is a great signal—it means you're in uncharted territory. I try to manufacture as much of that as possible.
         </p>
       </div>
     </div>
@@ -52,7 +46,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2024 Ben Parens</p>
+      <p>made with ♥ and lots of coffee</p>
     </div>
   </footer>
 
@@ -60,11 +54,6 @@
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-
-    // Fade in animation
-    setTimeout(() => {
-      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
-    }, 100);
   </script>
 </body>
 </html>
