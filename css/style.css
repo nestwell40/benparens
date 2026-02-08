@@ -292,6 +292,60 @@ img {
   transform: scale(1.03);
 }
 
+/* Publications Grid (2x2) */
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.publication-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s ease;
+}
+
+.publication-card:hover {
+  border-color: var(--black);
+  background: var(--gray-100);
+}
+
+.publication-card .pub-date {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.publication-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+/* Social Links Right */
+.social-links-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: right;
+}
+
+.social-links-right a {
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  transition: color 0.2s;
+}
+
+.social-links-right a:hover {
+  color: var(--black);
+}
+
 /* ================================
    ABOUT PAGE
    ================================ */

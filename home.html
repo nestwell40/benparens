@@ -13,11 +13,6 @@
       <a href="home.html" class="logo">Ben Parens</a>
 
       <div class="sidebar-left-bottom">
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/ben-parens-411419107/" target="_blank">LinkedIn</a>
-          <a href="https://benparens.substack.com" target="_blank">Substack</a>
-        </div>
-
         <nav class="page-links">
           <a href="about.html">About</a>
           <a href="writing.html">Thoughts</a>
@@ -36,11 +31,9 @@
         </p>
 
         <div class="intro-text">
-          <p class="section-label">Selected work <span>(03)</span></p>
-          <div class="work-grid">
-            <a href="outside.html" class="work-item">
-              <img src="images/IMG_2034.jpeg" alt="Adventure">
-            </a>
+          <p class="section-label">Latest Publications</p>
+          <div id="home-articles" class="publications-grid">
+            <div class="loading">Loading posts...</div>
           </div>
         </div>
       </section>
@@ -48,23 +41,9 @@
 
     <!-- Right Sidebar -->
     <aside class="sidebar-right">
-      <nav class="top-nav">
-        <a href="home.html" class="active">Home</a>
-        <a href="about.html">Info</a>
-        <a href="writing.html">Thoughts</a>
-        <a href="outside.html">Outside</a>
-      </nav>
-
-      <div>
-        <p class="status-badge">Building Nestwell</p>
-
-        <div class="profile-section">
-          <img src="images/IMG_0746.jpeg" alt="Ben Parens">
-          <div class="profile-info">
-            Builder<br>
-            Based in USA
-          </div>
-        </div>
+      <div class="social-links-right">
+        <a href="https://www.linkedin.com/in/ben-parens-411419107/" target="_blank">LinkedIn</a>
+        <a href="https://benparens.substack.com" target="_blank">Substack</a>
       </div>
 
       <div class="sidebar-right-bottom">
@@ -90,6 +69,61 @@
         document.getElementById('mobileNav').classList.add('active');
       });
     }
+
+    // Fetch Substack posts for home page
+    (function() {
+      const SUBSTACK_URL = 'https://benparens.substack.com/feed';
+      const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+      const container = document.getElementById('home-articles');
+
+      async function loadPosts() {
+        try {
+          const response = await fetch(CORS_PROXY + encodeURIComponent(SUBSTACK_URL));
+          if (!response.ok) throw new Error('Fetch failed');
+
+          const xmlText = await response.text();
+          const parser = new DOMParser();
+          const xml = parser.parseFromString(xmlText, 'text/xml');
+          const items = xml.querySelectorAll('item');
+
+          const posts = Array.from(items).slice(0, 4).map(item => {
+            const title = item.querySelector('title')?.textContent || '';
+            const link = item.querySelector('link')?.textContent || '';
+            const pubDate = item.querySelector('pubDate')?.textContent || '';
+
+            const date = new Date(pubDate);
+            const formattedDate = date.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            });
+
+            return { title, link, date: formattedDate };
+          });
+
+          if (posts.length === 0) {
+            container.innerHTML = '<p style="color: var(--gray-500);">No posts yet.</p>';
+            return;
+          }
+
+          container.innerHTML = posts.map(post => `
+            <a href="${post.link}" target="_blank" class="publication-card">
+              <span class="pub-date">${post.date}</span>
+              <h3>${post.title}</h3>
+            </a>
+          `).join('');
+
+        } catch (error) {
+          container.innerHTML = `
+            <p style="color: var(--gray-500);">
+              Visit <a href="https://benparens.substack.com" target="_blank" style="text-decoration: underline;">my Substack</a> for latest posts.
+            </p>
+          `;
+        }
+      }
+
+      loadPosts();
+    })();
   </script>
 </body>
 </html>
